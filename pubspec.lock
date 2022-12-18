@@ -92,6 +92,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+<<<<<<< HEAD
   easy_splash_screen:
     dependency: "direct main"
     description:
@@ -99,6 +100,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+=======
+>>>>>>> 124dfe8 (new commit)
   fake_async:
     dependency: transitive
     description:
