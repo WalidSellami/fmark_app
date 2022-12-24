@@ -416,6 +416,7 @@ class _AppScreenState extends State<AppScreen> {
                     'No',
                     style: TextStyle(
                       fontSize: 19.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
               ),
@@ -427,6 +428,7 @@ class _AppScreenState extends State<AppScreen> {
                   'Yes',
                   style: TextStyle(
                     fontSize: 19.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

@@ -5,7 +5,6 @@ import 'package:first_app/shared/network/local/CacheHelper.dart';
 import 'package:first_app/shared/styles/Styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'shared/_cubit/Cubit.dart';
 
 
@@ -52,3 +51,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
