@@ -1,3 +1,4 @@
+import 'package:first_app/shared/cubit/Cubit.dart';
 import 'package:flutter/material.dart';
 
 Widget item({
@@ -7,6 +8,7 @@ Widget item({
   required Function onChange,
   required Color color,
   required Color dropColor,
+  Function ? onPress,
 
 }) =>
     Padding(
@@ -16,20 +18,25 @@ Widget item({
       child: Row(
         children: [
           Expanded(
-            child: Text(
-              text,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontSize: 17.5,
-                letterSpacing: 0.15,
-                height: 1.25,
+            child: GestureDetector(
+              onTap: (){
+                onPress!();
+              },
+              child: Text(
+                text,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 17.5,
+                  letterSpacing: 0.15,
+                  height: 1.25,
+                ),
               ),
             ),
           ),
           DropdownButton(
               value: value,
-              icon: Icon(
+              icon: const Icon(
                 Icons.keyboard_arrow_down_outlined,
               ),
               borderRadius: BorderRadius.circular(6),

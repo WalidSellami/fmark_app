@@ -7,3 +7,5 @@ class ChangeValueState extends AppStates {}
 class GetTotalAppState extends AppStates {}
 
 class ResetValuesAppState extends AppStates {}
+
+class ShowFullTextAppState extends AppStates {}

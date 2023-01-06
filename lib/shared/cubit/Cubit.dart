@@ -48,4 +48,11 @@ class AppCubit extends Cubit<AppStates> {
     emit(ResetValuesAppState());
   }
 
+  bool isHide = true;
+
+  void showFullText(){
+    isHide = !isHide;
+    emit(ShowFullTextAppState());
+  }
+
 }

@@ -293,18 +293,62 @@ class _AppScreenState extends State<AppScreen> {
                           const SizedBox(
                             height: 10.0,
                           ),
-                          item(
-                              text:
-                              'Pertinence et qualité des réponses sur le plan scientifique',
-                              value: cubit.value1,
-                              list: cubit.list1,
-                              dropColor: ThemeCubit.get(context).isDark ? HexColor('161717') : Colors.white,
-                              color: ThemeCubit.get(context).isDark ? Colors.white :Colors.black,
-                              onChange: (newValue) {
-                                setState(() {
-                                  cubit.value1 = newValue;
-                                });
-                              }),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14.0,
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: GestureDetector(
+                                  onTap: (){
+                                    cubit.showFullText();
+                                  },
+                                  child: Text(
+                                    'Pertinence et qualité des réponses sur le plan scientifique',
+                                    maxLines: AppCubit.get(context).isHide ? 2 : null,
+                                    overflow: AppCubit.get(context).isHide ? TextOverflow.ellipsis : null,
+                                    style: const TextStyle(
+                                      fontSize: 17.5,
+                                      letterSpacing: 0.15,
+                                      height: 1.25,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              DropdownButton(
+                                  value: cubit.value1,
+                                  icon: const Icon(
+                                    Icons.keyboard_arrow_down_outlined,
+                                  ),
+                                  borderRadius: BorderRadius.circular(6),
+                                  dropdownColor: ThemeCubit.get(context).isDark ? HexColor('161717') : Colors.white,
+                                  iconSize: 30,
+                                  style: TextStyle(
+                                    color: ThemeCubit.get(context).isDark ? Colors.white :Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18.0,
+                                  ),
+                                  underline: Container(
+                                    height: 2,
+                                    color: ThemeCubit.get(context).isDark ? Colors.white :Colors.black,
+                                  ),
+                                  items: cubit.list1.map((dynamic value) {
+                                    return DropdownMenuItem(
+                                      value: value,
+                                      child: Text(
+                                        '$value',
+                                      ),
+                                    );
+                                  }).toList(),
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      cubit.value1 = newValue;
+                                    });
+                                  }),
+                            ],
+                          ),
+                         ),
                         ],
                       ),
                     ),
